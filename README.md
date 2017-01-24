@@ -3,6 +3,7 @@
 Building and running:
 
 using command line and GUI
+
 1) Go inside the folder tika-1.14
 2) Run  $ mvn clean install -DskipTests
 It will generate target file in tike-app
@@ -22,6 +23,12 @@ changes made into the tika source code
 
 3)Entry for mime-type is made in tika-1.14/tika-core/src/main/resources/org/apache/tika/mime tika-mimetypes.xml
 
-Note: I did not do it for tab separated values file as tika already have entry in their mime database for that type of file. 
+Notes:
+
+1)Parsed text is available as RecursiveJson.
+
+2) I did not do it for tab separated values file as tika already have entry in their mime database for that type of file. 
+
+3) Found bugs. Mentioned in Bugs.txt .
 
 
