@@ -18,6 +18,7 @@ import org.apache.tika.sax.OfflineContentHandler;
 import org.apache.tika.sax.TaggedContentHandler;
 import org.apache.tika.sax.TextContentHandler;
 import org.apache.tika.sax.XHTMLContentHandler;
+import org.apache.tika.detect.AutoDetectReader;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
@@ -38,8 +39,25 @@ public class XXYXParser extends AbstractParser {
                 metadata.set(Metadata.CONTENT_TYPE, HELLO_MIME_TYPE);
                 metadata.set("Hi", "This is xxyxtype file. It contains keyword xxyxxxyx");
 
-                XHTMLContentHandler xhtml = new XHTMLContentHandler(handler, metadata);
-                xhtml.startDocument();
-                xhtml.endDocument();
+              	 try (AutoDetectReader reader = new AutoDetectReader(
+                new CloseShieldInputStream(stream), metadata)) {
+                  XHTMLContentHandler xhtml =
+                    new XHTMLContentHandler(handler, metadata);
+            	   xhtml.startDocument();
+
+            	   xhtml.startElement("p");
+            	   char[] buffer = new char[4096];
+            	   int n = reader.read(buffer);
+            	   while (n != -1) {
+                   xhtml.characters(buffer, 0, n);
+                   n = reader.read(buffer);
+                  }
+                  xhtml.endElement("p");
+
+            	   xhtml.endDocument();
+        	}
+
+		
+                
         }
 }
