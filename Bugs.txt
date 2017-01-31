@@ -1,1 +1,0 @@
-1)The first 1024 bytes of a file does not appear in parsing. Need to make changes in XXYXDetector (as lookaheadinputstream is consuming the first 1024 bytes)
