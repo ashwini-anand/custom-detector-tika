@@ -16,3 +16,4 @@
 org.apache.tika.parser.microsoft.POIFSContainerDetector
 org.apache.tika.parser.pkg.ZipContainerDetector
 org.apache.tika.parser.xxyx.XXYXDetector
+org.apache.tika.parser.orc.ORCDetector

@@ -53,6 +53,9 @@
     <glob pattern="*.aw"/>
   </mime-type>
 
+<mime-type type="application/orc">
+  </mime-type>
+
   <mime-type type="text/xxyxtype">
   </mime-type>
   

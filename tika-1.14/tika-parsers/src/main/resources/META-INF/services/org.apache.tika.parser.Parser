@@ -13,6 +13,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+org.apache.tika.parser.orc.ORCParser
 org.apache.tika.parser.xyzc.XYZCParser
 org.apache.tika.parser.xxyx.XXYXParser
 org.apache.tika.parser.apple.AppleSingleFileParser
